@@ -31,7 +31,11 @@ public class RdV {
     //constructeur surchargé
     RdV(LocalDate _date, LocalTime _h_debut, LocalTime _h_fin, String _libelle, 
             boolean _rappel){
-        
+        this.setDate(_date);
+        this.setHdebut(_h_debut);
+        this.setHfin(_h_fin);
+        this.setLibelle(_libelle);
+        this.setRappel(_rappel);
     }
     
     //getters
@@ -57,28 +61,52 @@ public class RdV {
     
     //setters
     
-    void setDate(LocalDate _date){
+    final void setDate(LocalDate _date){
         this.date=_date;
     }
     
-    void setHdebut(LocalTime _h_debut){
+    final void setHdebut(LocalTime _h_debut){
         this.h_debut=_h_debut;
     }
     
-    void setHfin(LocalTime _h_fin){
+    final void setHfin(LocalTime _h_fin){
         this.h_fin=_h_fin;
     }
     
-    void setLibelle(String _libelle){
+    final void setLibelle(String _libelle){
         if(_libelle.length()<=30){
         this.libelle=_libelle;
         }
     }
     
-    void setRappel(boolean _rappel){
+    final void setRappel(boolean _rappel){
         this.rappel=_rappel;
     }
     
     //autres methodes
+
+    /**
+     * afficher tous les Rdvs (par date et horaires croissants) entre 2 dates
+     */
+    
+    /**
+     * afficher les RdVs correspondant a un critere ou une conjonction de criteres
+     */
+    
+    /**
+     * modifier un RdV
+     */
+    
+    /**
+     * ajouter un RdV (si le creneau date-horaire est libre) (à faire dans agenda ?)
+     */
+    
+    /**
+     * supprimer un RdV (à faire dans Agenda ?)
+     */
+    
+    /**
+     * supprimer TOUS les RdVs (à faire dans agenda ?)
+     */
     
 }

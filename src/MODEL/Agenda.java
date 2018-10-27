@@ -41,7 +41,7 @@ public class Agenda {
     /**
      * sauvegarder ET fermer l'agenda
      */
-    void FermeAgd(){
+    void FermerAgd(){
         
     }    
     

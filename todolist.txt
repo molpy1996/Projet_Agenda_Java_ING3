@@ -1,0 +1,8 @@
+SID :
+connection (username & mdp avec une map (clé unique))
+du coup nouvel utilisateur
+
+VICTOR :
+
+modifierRdV -> ne s'occupe de l'affichage CAR MVC ==> affichage se fait dans VIEW
+dans afficherRdV ==> trier par date et horaires croissants les rdv avant de les afficher

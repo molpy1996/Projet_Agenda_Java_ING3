@@ -59,17 +59,20 @@ public class GestionnaireIHM {
                 case 1 :
                 {
                     //creation d'agenda
+                    break;
                 }
                 
                 case 2:
                 {
                     //charger un agenda
+                    break;
                 }
                 
                 case 3:
                 {
                     //retour au menu principal
                     GestionnaireIHM M = new GestionnaireIHM();
+                    break;
                 }
                 
                 default:
@@ -98,17 +101,40 @@ public class GestionnaireIHM {
                 case 1 :
                 {
                     //afficher tous les Rdv
+                    break;
                 }
                 
                 case 2:
                 {
-                    //Afficher les Rdv filtré
+                    //Afficher les Rdv filtressur criteres
+                    break;
                 }
                 
                 case 3:
                 {
-                    //retour au menu principal
+                    //Modifier un Rdv
+                    break;
+                }
+                
+                case 4 :
+                {
+                    //Supprimer un Rdv
+                    break;
+                }
+                
+                case 5:
+                {
+                    //Supprimer tous les Rdv
+                    break;
+                }
+                
+                case 6:
+                {
+                    //Sauvegarder et fermer un agenda
+                    
+                    //retour au menu
                     GestionnaireIHM M = new GestionnaireIHM();
+                    break;
                 }
                 
                 default:

@@ -5,10 +5,13 @@
  */
 package MODEL;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Formatter;
+import java.util.Scanner;
 
 /**
  *
@@ -44,22 +47,20 @@ public class Agenda {
      * Ouvrir l'agenda d'une personne specifiee ==> si boolean rappel == true;
      * afficher le libelle du RdV dans un pop-up 15min avant
      */
-    
+ 
     
     /**
      * sauvegarder l'agenda dans un fichier ET fermer l'agenda
      */
-    
-    
     public void FermerAgd() {
         //on essaye d'ouvrir un fichier dans lequel enregistrer le contenu de l'agenda
         try {
-            Formatter f_agenda = new Formatter("\\Projet_Agenda_ING3\\saved_agendas");
+            Formatter agd_a_enreg = new Formatter("C:\\Projet_Agenda_ING3\\saved_agendas");
 
             for (RdV el : this.getAgenda()) {
                 //on enregistre 1 rdv par ligne
                 //faire gaffe aux formats : %..
-                f_agenda.format("%s/%s/%s de %s a %s : %s , %b",
+                agd_a_enreg.format("%s/%s/%s de %s a %s : %s , %s\n",
                         el.getDate().getDayOfMonth(), el.getDate().getMonthValue(),
                         el.getDate().getYear(), el.getHdebut(),
                         el.getHfin(), el.getLibelle(), el.getRappel());
@@ -67,12 +68,12 @@ public class Agenda {
                 this.suppressionRdV(el);
             }
             //on ferme le fichier en ecriture
-            f_agenda.close();
+            agd_a_enreg.close();
             //on met l'attribut agenda à null une fois qu'il est "vidé"
             this.agd = null;
         } //en cas de probleme dans l'ouverture du fichier on affiche une erreur
         catch (Exception e) {
-            System.out.print("Erreur d'ouverture du fichier\n");
+            System.out.print("Erreur d'ouverture du fichier en ecriture\n");
         }
 
     }
@@ -161,7 +162,7 @@ public class Agenda {
             this.getAgenda().remove(elem_agenda);
         }
         //on reinitialise a null l'objet agenda
-        this.agd = null;
+        //this.agd = null;
     }
 
 }
